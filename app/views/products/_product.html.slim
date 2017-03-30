@@ -1,0 +1,18 @@
+/ ''= render @customers' in index to render this partial
+/ ''= render @customer' in show to render this partial
+/ Full expanded version: '= render partial: 'customer', collection: @customers, locals: {full_details: false}
+.product.card
+  div.card-block
+    = image_tag product.image  
+    h2.card-title = product.name
+    div
+      strong Price: 
+      = number_to_currency product.price
+    div.card-text
+      strong Description: 
+      - if product.description.present?
+        = product.description
+      - else
+        | No description available at this time.
+    div
+      strong IN STOCK

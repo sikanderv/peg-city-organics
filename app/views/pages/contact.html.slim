@@ -1,0 +1,11 @@
+h3 We'd love to hear from you!
+= form_tag(controller: 'welcome', action: 'index') do
+ = label_tag 'Name'
+ br
+ = text_field_tag :name
+ br
+ = label_tag 'Details'
+ br
+ = text_area_tag :body
+ br
+ = submit_tag 'Submit'

@@ -13,7 +13,7 @@ class CreateProducts < ActiveRecord::Migration[5.0]
       t.boolean :featured, default: false
       t.boolean :stock_control, default: true
       t.string  :image
-      t.references :product_category, foreign_key: true
+      t.references :category, foreign_key: true
 
       t.timestamps
     end

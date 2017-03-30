@@ -1,0 +1,6 @@
+h1 Be Awesome, Buy Awesome
+li
+  ul = link_to 'All Products', root_path
+  ul = link_to 'By Category', categorized_product_path
+  ul = link_to 'Just Arrived', latest_product_path
+= render partial: '/partials/product', collection: @products

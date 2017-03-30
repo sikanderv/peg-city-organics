@@ -4,7 +4,7 @@ class Product < ApplicationRecord
   mount_uploader :image, AttachmentUploader
 
   has_many :attachments, as: :parent, dependent: :destroy, autosave: true
-  belongs_to :product_category
+  belongs_to :category
 
   validates :name, presence: true
   # validates :permalink, presence: true, uniqueness: true, permalink: true
