@@ -5,5 +5,5 @@ nav.navbar
     li.item = link_to 'By Category', categorized_product_path
     li.item = link_to 'ON SALE!', sale_product_path
     li.item = link_to 'Just Arrived', latest_product_path
-= render partial: '/partials/search'
-= render partial: '/partials/product', collection: @products
+= render partial: 'partials/search'
+= render partial: 'partials/product', collection: @products
