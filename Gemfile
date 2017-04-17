@@ -74,3 +74,5 @@ gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.3.6'
 
 gem 'ransack'
+
+gem 'passenger'
