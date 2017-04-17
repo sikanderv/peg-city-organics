@@ -4,13 +4,20 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    # @products = Product.all
+    @products = Product.all.order('created_at DESC')
+    # @products = @products.search(params[:search]) if params[:search].present?
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
     @product = Product.find(params[:id])
+  end
+
+  def result
+    # @products = Product.all.order('created_at DESC')
+    @products = Product.where('name LIKE :search OR description LIKE :search',  search: "%#{params[:search]}%")
   end
 
   def sale

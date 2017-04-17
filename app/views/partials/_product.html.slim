@@ -2,6 +2,7 @@
 / ''= render @customer' in show to render this partial
 / Full expanded version: '= render partial: 'customer', collection: @customers, locals: {full_details: false}
 .product
+  div
   = image_tag product.image  
   h2#bold = product.name
   div

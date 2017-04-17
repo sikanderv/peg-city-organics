@@ -27,3 +27,15 @@ body {
   padding-top: 3em;
   background-color: teal;
 }
+
+form {
+  div {
+    input[type=text] {
+      width: 400px;
+    }
+  }
+}
+
+.form-control {
+
+}

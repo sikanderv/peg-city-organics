@@ -1,0 +1,4 @@
+= form_tag('/products', class: 'form-inline')
+  .form-group
+    = text_field_tag :search, params[:search], placeholder: "Search by name or description", class: 'form-control mb-2 mr-sm-2 mb-sm-0'
+    = submit_tag "Search", class: 'btn btn-primary'

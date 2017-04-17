@@ -259,6 +259,7 @@ DEPENDENCIES
   mini_magick
   puma (~> 3.0)
   rails (~> 5.0.2)
+  ransack
   sass-rails (~> 5.0)
   slim-rails
   spring

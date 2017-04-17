@@ -34,8 +34,15 @@ class Product < ApplicationRecord
   end
 
   # All active products
-  scope :active, -> { where(active: true) }
+  scope :active_products, -> { where(active: true) }
 
   # All featured products
-  scope :featured, -> { where(featured: true) }
+  scope :featured_products, -> { where(featured: true) }
+
+  # All products on sale
+  scope :on_sale_products, -> { where('on_sale', true) }
+
+  # All products listedd between 2 dates
+  # scope :new_products, -> started_at, ended_at { where("started_at = ? AND ended_at = ?", started_at, ended_at) }
+
 end

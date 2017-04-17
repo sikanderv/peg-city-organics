@@ -11,5 +11,15 @@
 }
 
 nav.navbar {
-   class = "navbar navbar-inverse bg-primary"
+  class = "navbar navbar-inverse bg-primary"
+}
+
+ul.centre{
+  class = "nav nav-tabs";
+
+  li.item {
+    display: inline;
+    list-style-type: none;
+    padding-right: 20px;
+  }
 }
