@@ -45,9 +45,16 @@ Rails.application.configure do
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 
-  config.serve_static_assets = true
-  config.assets.compile = true
-  config.assets.precompile =  ['*.js', '*.css', '*.css.erb', '*.slim']
+  # config.assets.compile = true
+  # config.assets.precompile =  ['*.js', '*.css', '*.css.erb', '*.slim']
+  config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
+
+  # Compress JavaScripts and CSS.
+  config.assets.js_compressor = :uglifier
+  # config.assets.css_compressor = :sass
+
+  # Do not fallback to assets pipeline if a precompiled asset is missed.
+  config.assets.compile = false
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
