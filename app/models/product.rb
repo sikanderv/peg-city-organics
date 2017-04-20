@@ -6,6 +6,10 @@ class Product < ApplicationRecord
   has_many :attachments, as: :parent, dependent: :destroy, autosave: true
   belongs_to :category
 
+  has_many :order_items
+
+  default_scope { where(active: true) }
+
   validates :name, presence: true
   # validates :permalink, presence: true, uniqueness: true, permalink: true
   validates :sku, presence: true

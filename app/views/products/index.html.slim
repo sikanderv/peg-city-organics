@@ -6,4 +6,9 @@ nav.navbar
     li.item = link_to 'ON SALE!', sale_product_path
     li.item = link_to 'Just Arrived', latest_product_path
 = render partial: 'partials/search'
-= render partial: 'partials/product', collection: @products
+/ = render partial: 'partials/product', collection: @products
+.row
+  .col-xs-6.col-xs-offset-3
+    - @products.each do |product|
+      = render "/partials/product_row", product: product, order_item: @order_item
+/ = paginate @products
