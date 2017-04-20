@@ -6,6 +6,7 @@ class ProductsController < ApplicationController
   def index
     # @products = Product.all
     @products = Product.all.order('created_at DESC')
+    @order_item = current_order.order_items.new
     # @products = @products.search(params[:search]) if params[:search].present?
   end
 

@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  # get 'order_items/create'
+
+  # get 'order_items/update'
+
+  # get 'order_items/destroy'
+
+  # get 'carts/show'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root 'products#index'
@@ -13,4 +21,9 @@ Rails.application.routes.draw do
   get 'products/latest' => 'products#latest', as: "latest_product"
   get 'products/sale' => 'products#sale', as: "sale_product"
   get 'products/:id/' => 'products#show', as: "show_product"
+
+  resource :cart, only: [:show]
+  resources :order_items, only: [:create, :update, :destroy]
+
+  # resources :products, only: [:index, :show]
 end
