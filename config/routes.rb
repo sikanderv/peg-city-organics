@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'contact/contact_us' => 'contact#contact_us', as: 'contact_us'
+  get 'about/about_us'  => 'about#about_us', as: 'about_us'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root 'products#index'
@@ -11,7 +14,7 @@ Rails.application.routes.draw do
 
   get '/admin/contact' => 'admin/contact#index', as: "contact"
   get 'pages/contact' => 'pages#contact', as: "user_contact"
-  get 'pages/about' => 'pages#about', as: "about"
+  # get 'pages/about' => 'pages#about', as: "about"
   get 'products/categorized' => 'products#categorized', as: "categorized_product"
   get 'products/latest' => 'products#latest', as: "latest_product"
   get 'products/sale' => 'products#sale', as: "sale_product"

@@ -1,10 +1,10 @@
 h2 Be Awesome, Buy Awesome
 nav.navbar
-  div
-  ul.centre
-    li.item = link_to 'By Category', categorized_product_path
-    li.item = link_to 'ON SALE!', sale_product_path
-    li.item = link_to 'Just Arrived', latest_product_path
+  div.bd-toc-item
+  ul.nav
+    li = link_to 'By Category', categorized_product_path
+    li = link_to 'ON SALE!', sale_product_path
+    li = link_to 'Just Arrived', latest_product_path
 = render partial: 'partials/search'
 / = render partial: 'partials/product', collection: @products
 .row

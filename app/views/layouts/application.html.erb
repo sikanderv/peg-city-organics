@@ -18,6 +18,8 @@
     <!-- <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Slabo+27px" rel="stylesheet">
   </head>
 
   <body>
@@ -32,6 +34,14 @@
     </div>
     <hr>
     <%= yield %>
+    <div class="footer navbar-fixed-bottom">
+      <div class="bd-toc-item">
+        <ul class="nav">
+          <li><%= link_to "Home Page", root_path %></li>
+          <li><%= link_to "About Us", about_us_path %></li>
+          <li><%= link_to "Contact Us", contact_us_path %></li>
+        </div>
+    </div>
   </div>
 
     <!-- <%= yield %>

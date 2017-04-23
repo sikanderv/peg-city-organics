@@ -16,6 +16,11 @@
  @import "bootstrap";
  @import "bootstrap/theme";
 
+*{
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
+
 .header {
     position: fixed;
     z-index: 1000;
@@ -23,9 +28,11 @@
 }
 
 body {
-  padding: 10em;
-  padding-top: 3em;
-  background-color: teal;
+  // padding: 10em;
+  // padding-top: 3em;
+  // background-color: teal;
+  // font-size: 12px;
+  padding-bottom: 70px;
 }
 
 form {
