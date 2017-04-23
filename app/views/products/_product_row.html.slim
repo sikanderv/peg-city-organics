@@ -2,8 +2,8 @@
   .row
     .col-xs-9
     div
-    = image_tag product.image    
-    h4 = product.name
+    = image_tag product.image 
+    h4 = link_to product.name, product
     .col-xs-4
       = form_for order_item, remote: true do |f|
         h4
