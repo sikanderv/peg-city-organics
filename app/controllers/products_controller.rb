@@ -1,3 +1,4 @@
+# Product contoller
 class ProductsController < ApplicationController
   # before_action :set_product, only: [:show, :edit, :update, :destroy]
 
@@ -6,7 +7,7 @@ class ProductsController < ApplicationController
   def index
     # @products = Product.all
     # @products = Product.all.order('created_at DESC')
-    @products = Product.order("name").page(params[:page]).per(3)
+    @products = Product.order('name').page(params[:page]).per(3)
     @order_item = current_order.order_items.new
     # @products = @products.search(params[:search]) if params[:search].present?
   end
@@ -19,7 +20,8 @@ class ProductsController < ApplicationController
 
   def result
     # @products = Product.all.order('created_at DESC')
-    @products = Product.where('name LIKE :search OR description LIKE :search',  search: "%#{params[:search]}%")
+    @products = Product.where('name LIKE :search OR description LIKE :search',
+                              search: "%#{params[:search]}%")
   end
 
   def sale

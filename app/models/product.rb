@@ -1,5 +1,4 @@
 class Product < ApplicationRecord
-
   # Mount the Carrierwave uploader
   mount_uploader :image, AttachmentUploader
 
@@ -29,24 +28,28 @@ class Product < ApplicationRecord
     attachments.build(file: file, role: 'default_image')
   end
 
-
-  def attachments=(attrs)
-    if attrs['default_image']['file'].present? then attachments.build(attrs['default_image']) end
-    if attrs['data_sheet']['file'].present? then attachments.build(attrs['data_sheet']) end
-
-    if attrs['extra']['file'].present? then attrs['extra']['file'].each { |attr| attachments.build(file: attr, parent_id: attrs['extra']['parent_id'], parent_type: attrs['extra']['parent_type']) } end
-  end
+  # def attachments=(attrs)
+  #   if attrs['default_image']['file'].present? then attachments.build(attrs['default_image']) end
+  #   if attrs['data_sheet']['file'].present? then attachments.build(attrs['data_sheet']) end
+  #   if attrs['extra']['file'].present?
+  #     attrs['extra']['file'].each do |attr|
+  #       attachments.build(file: attr,
+  #                         parent_id: attrs['extra']['parent_id'],
+  #                         parent_type: attrs['extra']['parent_type'])
+  #     end
+  #   end
+  # end
 
   # All active products
-  scope :active_products, -> { where(active: true) }
+  scope :active_products, (-> { where(active: true) })
 
   # All featured products
-  scope :featured_products, -> { where(featured: true) }
+  scope :featured_products, (-> { where(featured: true) })
 
   # All products on sale
-  scope :on_sale_products, -> { where('on_sale', true) }
+  scope :on_sale_products, (-> { where('on_sale', true) })
 
   # All products listedd between 2 dates
-  # scope :new_products, -> started_at, ended_at { where("started_at = ? AND ended_at = ?", started_at, ended_at) }
-
+  # scope :new_products, -> started_at, ended_at {
+  # where("started_at = ? AND ended_at = ?", started_at, ended_at) }
 end

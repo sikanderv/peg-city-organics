@@ -19,7 +19,8 @@ class Attachment < ApplicationRecord
 
   # Return the attachment for a given role
   def self.for(role)
-    where(role: role).first
+    # where(role: role).first
+    find_by(role: role)
   end
 
   # Return the path to the attachment
@@ -29,7 +30,7 @@ class Attachment < ApplicationRecord
 
   # Is the attachment an image?
   def image?
-    file_type.match(/\Aimage\//).present?
+    # file_type.match(/\Aimage\//).present?
+    %r{/Aimage//}.present?
   end
-
 end

@@ -21,16 +21,21 @@ class OrderItem < ApplicationRecord
   end
 
   private
+
   def product_present
-    if product.nil?
-      errors.add(:product, "is not valid or is not active.")
-    end
+    # if product.nil?
+    #   errors.add(:product, "is not valid or is not active.")
+    # end
+    return unless product.nil?
+    errors.add(:product, 'is not valid or is not active.')
   end
 
   def order_present
-    if order.nil?
-      errors.add(:order, "is not a valid order.")
-    end
+    # if order.nil?
+    #   errors.add(:order, 'is not a valid order.')
+    # end
+    return unless order.nil?
+    errors.add(:order, 'is not a valid order.')
   end
 
   def finalize
