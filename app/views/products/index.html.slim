@@ -1,4 +1,4 @@
-h1 Be Awesome, Buy Awesome
+h2 Be Awesome, Buy Awesome
 nav.navbar
   div
   ul.centre
@@ -10,5 +10,4 @@ nav.navbar
 .row
   .col-xs-6.col-xs-offset-3
     - @products.each do |product|
-      = render "/partials/product_row", product: product, order_item: @order_item
-/ = paginate @products
+      = render "product_row", product: product, order_item: @order_item

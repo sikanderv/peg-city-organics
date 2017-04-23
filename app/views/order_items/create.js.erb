@@ -1,5 +1,7 @@
+// # <%p @order.errors.full_messages%> and <%p @order_item.errors.full_messages%>
+
 <% if @order.errors.any? || @order_item.errors.any? %>
-alert("not valid.")
+   alert("not valid.")
 <% else %>
-  $(".cart-text").html("<%= escape_javascript(render '/partials/cart_text') %>")
+   $(".cart-text").html("<%= escape_javascript(render 'partials/cart_text') %>")
 <% end %>
