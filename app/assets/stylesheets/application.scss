@@ -32,7 +32,8 @@ body {
   // padding-top: 3em;
   // background-color: teal;
   // font-size: 12px;
-  padding-bottom: 70px;
+  padding-bottom: 40px;
+  padding-top: 40px;
 }
 
 form {
@@ -45,4 +46,12 @@ form {
 
 .form-control {
 
+}
+
+a {
+  color:white;
+}
+
+.navbar > ul > li >a{
+  color:white;
 }

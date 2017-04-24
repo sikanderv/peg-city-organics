@@ -1,9 +1,8 @@
-.header
-  h2 Peg City Organics
+nav.navbar-fixed-top
   ul
     li = link_to 'Home', root_path
     - if admin_user_signed_in?
       li = link_to 'Contact Us', admin_contact_path
     - else
-      li = link_to 'Contact Us', user_contact_path
-    li = link_to 'About Us', about_path
+      li = link_to 'Contact Us', contact_us_path
+  li = link_to 'About Us', about_us_path

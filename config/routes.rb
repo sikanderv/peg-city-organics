@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'contact/contact_us' => 'contact#contact_us', as: 'contact_us'
   get 'about/about_us'  => 'about#about_us', as: 'about_us'
 
@@ -19,6 +20,8 @@ Rails.application.routes.draw do
   get 'products/latest' => 'products#latest', as: "latest_product"
   get 'products/sale' => 'products#sale', as: "sale_product"
   get 'products/:id/' => 'products#show', as: "show_product"
+
+  get 'checkout' => 'products#checkout', as: 'checkout'
 
   resources 'products', only: [:index, :show, :sale, :latest, :categorized]
 end

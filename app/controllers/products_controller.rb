@@ -42,6 +42,23 @@ class ProductsController < ApplicationController
     # <% end %>
   end
 
+  def checkout
+    @order = current_order
+    @order_items = current_order.order_items
+    @order_subtotal = current_order.subtotal
+
+    return unless user_signed_in?
+    @order.user_id = current_user.id
+    @order_pst = @order_subtotal * current_user.province.pst
+    @order_gst = @order_subtotal * current_user.province.gst
+    @order_hst = @order_subtotal * current_user.province.hst
+    @total_tax = @order_hst + @order_gst + @order_pst
+    @order.tax = @total_tax
+    @order.total = @order_subtotal + @total_tax
+    @order.order_status_id = 2
+    @order.save!
+  end
+
   # # GET /products/new
   # def new
   #   @product = Product.new
