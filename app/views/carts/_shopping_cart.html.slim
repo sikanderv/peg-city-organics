@@ -9,3 +9,12 @@
 - else
   - @order_items.each do |order_item|
     = render 'carts/cart_row', product: order_item.product, order_item: order_item, show_total: true
+    h3
+      b Subtotal:
+      = number_to_currency current_order.subtotal
+    - unless user_signed_in?
+      p
+        b Log-in or sign up to check out your cart!
+    p= link_to 'Continue Shopping', root_path
+    - if user_signed_in?
+      p= link_to 'Checkout', checkout_path, order: @order

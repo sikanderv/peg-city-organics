@@ -1,5 +1,7 @@
 # Order Items controller
 class OrderItemsController < ApplicationController
+  # before_action :authenticate_user!
+
   def create
     @order = current_order
     @order_item = @order.order_items.new(order_item_params)
