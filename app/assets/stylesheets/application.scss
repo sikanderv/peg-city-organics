@@ -16,9 +16,12 @@
  @import "bootstrap";
  @import "bootstrap/theme";
 
-*{
+* {
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
+  input[type=submit] {
+    width: 100px;
+  }
 }
 
 .header {

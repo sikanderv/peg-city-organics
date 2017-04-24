@@ -24,7 +24,7 @@
           br/
           | Visa ending **** 4242
           br/
-          | current_user.email
+          = current_user.email
         .col-xs-6.text-right
           strong Order Date:
           br/
@@ -58,9 +58,9 @@
                   tbody
                     /! foreach ($order->lineItems as $line) or some such thing here
                     tr
-                      td.text-center= number_to_currency @order_subtotal
-                      td.text-center= number_to_currency @order_pst
-                      td.text-center= number_to_currency @order_gst
-                      td.text-center= number_to_currency @order_hst
-                      td.text-center= number_to_currency @total_tax
-                      td.text-right= number_to_currency (@order_subtotal + @total_tax)
+                      td.text-center= number_to_currency current_order.subtotal
+                      td.text-center= number_to_currency current_order.subtotal * current_user.province.pst
+                      td.text-center= number_to_currency current_order.subtotal * current_user.province.gst
+                      td.text-center= number_to_currency current_order.subtotal * current_user.province.hst
+                      td.text-center= number_to_currency (current_user.province.pst + current_user.province.gst + current_user.province.hst) * current_order.subtotal
+                      td.text-right= number_to_currency  current_order.subtotal + ((current_user.province.pst + current_user.province.gst + current_user.province.hst) * current_order.subtotal)

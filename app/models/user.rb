@@ -10,5 +10,4 @@ class User < ApplicationRecord
          :rememberable,
          :trackable,
          :validatable
-        #  authentication_keys: [:username]
 end
